@@ -1,0 +1,1 @@
+Before starting the broker make sure that you have a schema with name "activemq" in the database.
