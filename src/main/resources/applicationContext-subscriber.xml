@@ -27,6 +27,14 @@
     <property name="unmarshaller" ref="marshaller" />
   </bean>
 
+  <bean name="messageListener" class="learn.activemq.MessageListener" />
+  <bean id="queueListener"
+    class="org.springframework.jms.listener.adapter.MessageListenerAdapter">
+    <constructor-arg ref="messageListener" />
+    <property name="defaultListenerMethod" value="receive" />
+    <property name="messageConverter" ref="marshallingConverter" />
+  </bean>
+  
 	<!-- Queue related Configurations -->
 
 	<!-- listener container definition using the jms namespace, concurrency 
@@ -35,13 +43,7 @@
     <jms:listener id="QueueListener" destination="activeMQTestQ"
       ref="queueListener" subscription="ManSub" />
   </jms:listener-container>
-  <bean id="queueListener"
-    class="org.springframework.jms.listener.adapter.MessageListenerAdapter">
-    <constructor-arg ref="messageListener" />
-    <property name="defaultListenerMethod" value="receive" />
-    <property name="messageConverter" ref="marshallingConverter" />
-  </bean>
-  <bean name="messageListener" class="learn.activemq.MessageListener" />
+  
   <bean name="jmsTemplateTopic" class="org.springframework.jms.core.JmsTemplate">
     <constructor-arg ref="connectionFactory" />
     <property name="messageConverter" ref="marshallingConverter" />

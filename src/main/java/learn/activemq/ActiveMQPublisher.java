@@ -6,7 +6,7 @@ import org.springframework.jms.core.JmsTemplate;
 /**
  * @author manish
  */
-public class ActiveMQPublisherTest {
+public class ActiveMQPublisher {
 
   public static void main(String args[]) throws InterruptedException {
     ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext-publisher.xml");

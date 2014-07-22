@@ -17,6 +17,6 @@ public class MessageListener  {
   private static Logger logger = Logger.getLogger(MessageListener.class);
 
   public void receive(String msg) {
-    logger.debug(msg.toString());
+    logger.debug("Message received:" + msg.toString());
   }
 }
