@@ -54,11 +54,11 @@
 
   <!-- lets create an embedded ActiveMQ Broker -->
   <amq:broker useJmx="true" persistent="false" start="true">
-    <amq:persistenceAdapter>
+    <!-- <amq:persistenceAdapter>
       <amq:jdbcPersistenceAdapter
         dataDirectory="amq-data" dataSource="#mqDataSource"
         useDatabaseLock="true" />
-    </amq:persistenceAdapter>
+    </amq:persistenceAdapter> -->
     <amq:transportConnectors>
       <amq:transportConnector uri="tcp://localhost:9125" />
     </amq:transportConnectors>

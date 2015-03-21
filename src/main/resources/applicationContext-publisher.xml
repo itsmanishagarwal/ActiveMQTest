@@ -26,6 +26,6 @@
   <bean name="jmsTemplateTopic" class="org.springframework.jms.core.JmsTemplate">
     <constructor-arg ref="connectionFactory" />
     <property name="messageConverter" ref="marshallingConverter" />
-    <property name="defaultDestinationName" value="activeMQTestQ" />
+    <property name="defaultDestinationName" value="notification.queue" />
   </bean>
 </beans>

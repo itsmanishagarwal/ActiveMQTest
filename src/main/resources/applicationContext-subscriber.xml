@@ -40,7 +40,7 @@
 	<!-- listener container definition using the jms namespace, concurrency 
 		is the max number of concurrent listeners that can be started -->
   <jms:listener-container concurrency="10">
-    <jms:listener id="QueueListener" destination="activeMQTestQ"
+    <jms:listener id="QueueListener" destination="notification.queue"
       ref="queueListener" subscription="ManSub" />
   </jms:listener-container>
   
@@ -48,6 +48,5 @@
     <constructor-arg ref="connectionFactory" />
     <property name="messageConverter" ref="marshallingConverter" />
     <property name="pubSubDomain" value="true" />
-    <property name="defaultDestinationName" value="activeMQTestQ" />
   </bean>
 </beans>
